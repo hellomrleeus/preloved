@@ -16,7 +16,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/001/src-01.jpg",
+        "images/001/src-02.jpg"
+      ]
     },
     {
       "id": "002",
@@ -34,7 +37,13 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/002/src-01.png",
+        "images/002/src-02.jpg",
+        "images/002/src-03.jpg",
+        "images/002/src-04.jpg",
+        "images/002/src-05.jpg"
+      ]
     },
     {
       "id": "003",
@@ -52,7 +61,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/003/src-01.jpg",
+        "images/003/src-02.jpg"
+      ]
     },
     {
       "id": "004",
@@ -70,7 +82,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/004/src-01.png",
+        "images/004/src-02.jpg"
+      ]
     },
     {
       "id": "005",
@@ -88,7 +103,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/005/src-01.jpg"
+      ]
     },
     {
       "id": "006",
@@ -106,7 +123,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/006/src-01.jpg",
+        "images/006/src-02.jpg"
+      ]
     },
     {
       "id": "007",
@@ -124,7 +144,11 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/007/src-01.png",
+        "images/007/src-02.jpg",
+        "images/007/src-03.jpg"
+      ]
     },
     {
       "id": "008",
@@ -142,7 +166,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/008/src-01.jpg",
+        "images/008/src-02.jpg"
+      ]
     },
     {
       "id": "009",
@@ -160,7 +187,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/009/src-01.jpg",
+        "images/009/src-02.jpg"
+      ]
     },
     {
       "id": "010",
@@ -178,7 +208,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/010/src-01.jpg",
+        "images/010/src-02.jpg"
+      ]
     },
     {
       "id": "011",
@@ -214,7 +247,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/012/src-01.jpg"
+      ]
     },
     {
       "id": "013",
@@ -252,7 +287,8 @@
       "soldPrice": null,
       "images": [
         "images/014/src-01.jpg",
-        "images/014/src-02.jpg"
+        "images/014/src-02.jpg",
+        "images/014/src-03.jpg"
       ]
     },
     {
@@ -289,7 +325,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/016/src-01.jpg"
+      ]
     },
     {
       "id": "017",
@@ -307,7 +345,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/017/src-01.jpg"
+      ]
     },
     {
       "id": "018",
@@ -325,7 +365,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/018/src-01.jpg",
+        "images/018/src-02.jpg"
+      ]
     },
     {
       "id": "019",
@@ -343,7 +386,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/019/src-01.jpg",
+        "images/019/src-02.jpg"
+      ]
     },
     {
       "id": "020",
@@ -362,7 +408,9 @@
       "soldDate": "",
       "soldPrice": null,
       "images": [
-        "images/020/src-01.jpg"
+        "images/020/src-01.jpg",
+        "images/020/src-02.jpg",
+        "images/020/src-03.jpg"
       ]
     },
     {
@@ -381,7 +429,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/021/src-01.jpg"
+      ]
     },
     {
       "id": "022",
@@ -399,7 +449,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/022/src-01.jpg"
+      ]
     },
     {
       "id": "023",
@@ -417,7 +469,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/023/src-01.png"
+      ]
     },
     {
       "id": "024",
@@ -509,7 +563,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/028/src-01.jpg"
+      ]
     },
     {
       "id": "029",
@@ -566,5 +622,5 @@
       "images": []
     }
   ],
-  "generatedAt": "2026-04-11T23:53:33+08:00"
+  "generatedAt": "2026-04-12T00:24:42+08:00"
 }
