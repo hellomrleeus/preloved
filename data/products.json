@@ -250,7 +250,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/014/src-01.jpg",
+        "images/014/src-02.jpg"
+      ]
     },
     {
       "id": "015",
@@ -358,7 +361,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/020/src-01.jpg"
+      ]
     },
     {
       "id": "021",
@@ -448,7 +453,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/025/src-01.jpg"
+      ]
     },
     {
       "id": "026",
@@ -559,5 +566,5 @@
       "images": []
     }
   ],
-  "generatedAt": "2026-04-11T22:53:01+08:00"
+  "generatedAt": "2026-04-11T23:53:33+08:00"
 }
