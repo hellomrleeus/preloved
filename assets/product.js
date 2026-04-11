@@ -50,6 +50,55 @@
     return fallbackCopy(text);
   }
 
+  function ensureLightbox(L) {
+    let lightbox = document.querySelector(".image-lightbox");
+    if (!lightbox) {
+      lightbox = document.createElement("div");
+      lightbox.className = "image-lightbox";
+      lightbox.hidden = true;
+      lightbox.innerHTML =
+        '<button type="button" class="image-lightbox-close" data-lightbox-close aria-label="' + window.escHtml(L.closePreview) + '">×</button>' +
+        '<div class="image-lightbox-backdrop" data-lightbox-close></div>' +
+        '<div class="image-lightbox-dialog">' +
+          '<img class="image-lightbox-img" alt="">' +
+        "</div>";
+      document.body.appendChild(lightbox);
+
+      lightbox.addEventListener("click", function (e) {
+        if (e.target.hasAttribute("data-lightbox-close")) closeLightbox();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLightbox();
+      });
+    } else {
+      const closeBtn = lightbox.querySelector(".image-lightbox-close");
+      if (closeBtn) closeBtn.setAttribute("aria-label", L.closePreview);
+    }
+    return lightbox;
+  }
+
+  function openLightbox(src, alt, L) {
+    const lightbox = ensureLightbox(L);
+    const image = lightbox.querySelector(".image-lightbox-img");
+    if (!image) return;
+    image.src = src;
+    image.alt = alt || "";
+    lightbox.hidden = false;
+    document.body.classList.add("lightbox-open");
+  }
+
+  function closeLightbox() {
+    const lightbox = document.querySelector(".image-lightbox");
+    if (!lightbox) return;
+    const image = lightbox.querySelector(".image-lightbox-img");
+    if (image) {
+      image.removeAttribute("src");
+      image.alt = "";
+    }
+    lightbox.hidden = true;
+    document.body.classList.remove("lightbox-open");
+  }
+
   function renderContact(L) {
     if (!contact || typeof contact !== "object") return "";
     const items = [];
@@ -125,7 +174,10 @@
       '<div class="gallery">' +
         '<div class="main-img-wrap">' +
           (mainSrc
-            ? '<div class="main-img" style="background-image:url(\'' + mainSrc + '\')"></div>'
+            ? '<button type="button" class="main-img-trigger" data-main-src="' + window.escHtml(mainSrc) +
+              '" aria-label="' + window.escHtml(L.viewOriginal) + '">' +
+                '<img class="main-img" src="' + window.escHtml(mainSrc) + '" alt="' + window.escHtml(product.title) + '">' +
+              "</button>"
             : '<div class="main-img placeholder"><span>📦</span></div>') +
         "</div>" +
         (images.length > 1
@@ -185,17 +237,23 @@
     detailEl.innerHTML = galleryHtml + infoHtml;
     detailEl.classList.toggle("is-sold", statusLower === "sold");
     bindCopyButtons(L);
+    ensureLightbox(L);
 
     // Thumbnail switching
     const mainImg = detailEl.querySelector(".main-img");
+    const mainTrigger = detailEl.querySelector(".main-img-trigger");
+    if (mainTrigger) {
+      mainTrigger.addEventListener("click", function () {
+        openLightbox(mainTrigger.getAttribute("data-main-src") || "", product.title, L);
+      });
+    }
     detailEl.querySelectorAll(".thumb").forEach(function (t) {
       t.addEventListener("click", function () {
         detailEl.querySelectorAll(".thumb").forEach(function (x) { x.classList.remove("active"); });
         t.classList.add("active");
-        if (mainImg) {
-          mainImg.style.backgroundImage = "url('" + t.dataset.src + "')";
-          mainImg.classList.remove("placeholder");
-          mainImg.innerHTML = "";
+        if (mainImg && mainTrigger) {
+          mainImg.src = t.dataset.src || "";
+          mainTrigger.setAttribute("data-main-src", t.dataset.src || "");
         }
       });
     });
