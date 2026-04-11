@@ -9,7 +9,7 @@
       "condition": "Good",
       "purchasePrice": null,
       "purchaseDate": "2022-01-01",
-      "askingPrice": 500,
+      "askingPrice": 600,
       "negotiable": true,
       "description": "Set of 4 winter tires. Asking $450–500.",
       "status": "Available",
@@ -127,5 +127,5 @@
       "images": []
     }
   ],
-  "generatedAt": "2026-04-11T14:44:38+08:00"
+  "generatedAt": "2026-04-11T16:28:09+08:00"
 }
