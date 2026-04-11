@@ -31,6 +31,7 @@ sheet.csv
 *.csv
 !data/*.csv
 *.log
+logs/
 *.tmp
 .cache/
 tmp/
