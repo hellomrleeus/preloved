@@ -24,13 +24,41 @@
   const product = (productData.products || []).find(function (p) { return p.id === id; });
   let lang = window.getLang();
 
+  function fallbackCopy(text) {
+    const input = document.createElement("textarea");
+    input.value = text;
+    input.setAttribute("readonly", "");
+    input.style.position = "absolute";
+    input.style.left = "-9999px";
+    document.body.appendChild(input);
+    input.select();
+    let ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (e) {}
+    document.body.removeChild(input);
+    return ok;
+  }
+
+  async function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (e) {}
+    }
+    return fallbackCopy(text);
+  }
+
   function renderContact(L) {
     if (!contact || typeof contact !== "object") return "";
     const items = [];
     if (contact.wechatQR || contact.wechatId) {
       let inner = '<div class="label">' + window.escHtml(L.wechat) + "</div>";
       if (contact.wechatId) {
-        inner += '<div class="value">' + window.escHtml(contact.wechatId) + "</div>";
+        inner += '<button type="button" class="value link copy-btn" data-copy-text="' +
+          window.escHtml(contact.wechatId) + '">' + window.escHtml(contact.wechatId) + "</button>" +
+          '<div class="hint copy-feedback" data-copy-feedback>' + window.escHtml(L.wechatCopy) + "</div>";
       }
       if (contact.wechatQR) {
         inner += '<img class="qr" src="' + window.escHtml(contact.wechatQR) +
@@ -64,6 +92,16 @@
       return '<p class="empty small">Contact info not set yet. Edit <code>data/contact.json</code>.</p>';
     }
     return '<div class="contact-grid">' + items.join("") + "</div>";
+  }
+
+  function bindCopyButtons(L) {
+    detailEl.querySelectorAll("[data-copy-text]").forEach(function (button) {
+      button.addEventListener("click", async function () {
+        const feedback = button.parentElement && button.parentElement.querySelector("[data-copy-feedback]");
+        const ok = await copyText(button.getAttribute("data-copy-text") || "");
+        if (feedback) feedback.textContent = ok ? L.wechatCopied : L.wechatCopyFailed;
+      });
+    });
   }
 
   function render() {
@@ -146,6 +184,7 @@
 
     detailEl.innerHTML = galleryHtml + infoHtml;
     detailEl.classList.toggle("is-sold", statusLower === "sold");
+    bindCopyButtons(L);
 
     // Thumbnail switching
     const mainImg = detailEl.querySelector(".main-img");

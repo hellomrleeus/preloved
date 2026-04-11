@@ -619,7 +619,20 @@ header.site {
   word-break: break-all;
 }
 .contact-item .value.link { color: var(--accent); }
+.contact-item .value.copy-btn {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+.contact-item .value.copy-btn:hover {
+  text-decoration: underline;
+}
 .contact-item .hint { font-size: 11px; color: var(--muted); margin-top: 6px; }
+.contact-item .hint.copy-feedback { min-height: 1.2em; }
 .contact-item .qr {
   width: 140px;
   height: 140px;
