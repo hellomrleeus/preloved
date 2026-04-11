@@ -1,0 +1,52 @@
+# ---- Local-only maintenance files (not part of the deployed site) ----
+scripts/
+CLAUDE.md
+
+# ---- OS / editor junk ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Python (sync script dev artifacts) ----
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# ---- Node (not used, defensive) ----
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ---- Local caches / downloads ----
+sheet.csv
+*.csv
+!data/*.csv
+*.log
+*.tmp
+.cache/
+tmp/
+
+# ---- Secrets / env ----
+.env
+.env.*
+*.key
+*.pem
+
+# ---- Original photo source files (only optimized copies go in images/) ----
+*.HEIC
+*.heic
+*.RAW
+*.raw
+*.cr2
+*.nef
+*.arw
+_originals/
