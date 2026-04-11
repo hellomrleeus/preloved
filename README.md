@@ -8,7 +8,7 @@ A tiny static catalog of secondhand goods, deployed on GitHub Pages.
 
 - `index.html` — category tabs + product grid
 - `product.html?id=001` — product detail page
-- `data/products.json` — product data (regenerated locally from `inventory.xlsx`)
+- `data/products.json` — product data (regenerated locally from the configured inventory workbook)
 - `data/contact.json` — seller contact info
 - `images/<id>/` — generated copies of product photos for the deployed site
 
@@ -16,14 +16,12 @@ No build step, no dependencies, no framework. Just open `index.html` in a browse
 
 ## Product source
 
-Product data comes from the local workbook:
-
-`/Users/xlee/Documents/加拿大/多伦多租房/出二手/inventory.xlsx`
+Product data comes from a locally configured inventory workbook that is not stored in this repo.
 
 Photo source rules:
 
 - If the `Photo Path` column is filled, that path is used as the source photo folder or image file.
-- If `Photo Path` is blank, the default source is a folder next to `inventory.xlsx` named after the product ID, such as `001/`.
+- If `Photo Path` is blank, the default source is a folder next to that workbook named after the product ID, such as `001/`.
 - The sync script copies those source photos into this repo's `images/<id>/` folder so GitHub Pages can serve them.
 
 ## Editing seller contact info

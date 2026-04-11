@@ -1,6 +1,7 @@
 # ---- Local-only maintenance files (not part of the deployed site) ----
 scripts/
 CLAUDE.md
+AGENTS.md
 
 # ---- OS / editor junk ----
 .DS_Store
