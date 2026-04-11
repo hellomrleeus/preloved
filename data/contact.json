@@ -1,7 +1,7 @@
 {
   "_comment": "Fill in whatever you want shown on the product page. Set any field to an empty string to hide it. WeChat QR should be a path to an image file, e.g. 'assets/contact/wechat-qr.png'.",
   "wechatId": "hellolyd0123",
-  "wechatQR": "assets/contact/wechat_qrcode.png",
+  "wechatQR": "assets/contact/wechat_qrcode.jpg",
   "email": "lyd19900123@hotmail.com",
   "phone": "",
   "xiaohongshu": ""
