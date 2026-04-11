@@ -61,8 +61,8 @@
           '<div class="hint copy-feedback" data-copy-feedback>' + window.escHtml(L.wechatCopy) + "</div>";
       }
       if (contact.wechatQR) {
-        inner += '<img class="qr" src="' + window.escHtml(contact.wechatQR) +
-          '" alt="WeChat QR" onerror="this.style.display=\'none\'">' +
+        inner += '<div class="qr-frame"><img class="qr" src="' + window.escHtml(contact.wechatQR) +
+          '" alt="WeChat QR" onerror="this.parentElement.style.display=\'none\'"></div>' +
           '<div class="hint">' + window.escHtml(L.wechatScan) + "</div>";
       }
       items.push('<div class="contact-item wechat">' + inner + "</div>");
