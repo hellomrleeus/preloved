@@ -637,19 +637,20 @@ header.site {
   width: 140px;
   height: 140px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   margin-top: 10px;
   border: 1.5px solid var(--ink);
-  background: #000;
+  background: #fff;
 }
 .contact-item .qr {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  transform: scale(1.7);
-  transform-origin: center;
 }
 
 .detail.is-sold .detail-price {
