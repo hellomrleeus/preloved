@@ -63,7 +63,7 @@ window.I18N = {
     itemCount: function (n) { return n + " 件商品"; },
     all: "全部",
     Furniture: "家具",
-    Electronics: "电子产品",
+    Electronics: "家电",
     Kitchen: "厨房",
     Clothing: "服装",
     Other: "其他",
