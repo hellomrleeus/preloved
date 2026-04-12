@@ -1,4 +1,4 @@
-// Home page: hero + category tabs + product grid.
+// Home page: hero + filter bar + product grid.
 (async function () {
   let data;
   try {
@@ -9,21 +9,26 @@
   }
 
   const products = Array.isArray(data.products) ? data.products : [];
+  const statusKeys = ["available", "reserved", "sold", "deleted"];
+  const statusOrder = { available: 0, reserved: 1, sold: 2, deleted: 3 };
+
   let lang = window.getLang();
   let currentCat = "all";
-  let hideSold = localStorage.getItem("hideSold") === "1";
+  let currentStatus = localStorage.getItem("statusFilter") || "all";
+  if (["all"].concat(statusKeys).indexOf(currentStatus) === -1) currentStatus = "all";
 
-  // Preserve sheet-order for categories.
   const categories = [];
   products.forEach(function (p) {
     if (p.category && categories.indexOf(p.category) === -1) categories.push(p.category);
   });
 
+  const statusTabsEl = document.querySelector(".status-tabs");
   const tabsEl = document.querySelector(".category-tabs");
   const gridEl = document.querySelector(".grid");
   const countEl = document.querySelector("[data-count]");
   const langBtn = document.querySelector("[data-lang-btn]");
-  const soldBtn = document.querySelector("[data-sold-btn]");
+  const statusLabelEl = document.querySelector("[data-status-label]");
+  const categoryLabelEl = document.querySelector("[data-category-label]");
   const brandNameEl = document.querySelector("[data-brand-name]");
   const brandTagEl = document.querySelector("[data-brand-tag]");
   const kickerEl = document.querySelector("[data-hero-kicker]");
@@ -34,38 +39,103 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   function catCount(key) {
-    return products.filter(function (p) {
-      if (key !== "all" && p.category !== key) return false;
-      if (hideSold && (p.status || "").toLowerCase() === "sold") return false;
-      return true;
+    return products.filter(function (product) {
+      return window.matchesCatalogFilters(product, {
+        category: key,
+        status: currentStatus
+      });
     }).length;
   }
 
-  function makeTab(key, label) {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "tab" + (currentCat === key ? " active" : "");
-    b.innerHTML = window.escHtml(label) +
-      ' <span class="tab-count">' + catCount(key) + "</span>";
-    b.addEventListener("click", function () { currentCat = key; render(); });
-    return b;
+  function statusCount(key) {
+    return window.getStatusCount(products, key, currentCat);
   }
 
-  function renderTabs(L) {
+  function makeTab(options) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "tab" +
+      (options.active ? " active" : "") +
+      (options.kind ? " " + options.kind + "-tab" : "") +
+      (options.tone ? " is-" + options.tone : "");
+    button.innerHTML =
+      '<span class="tab-text">' + window.escHtml(options.label) + "</span>" +
+      ' <span class="tab-count">' + options.count + "</span>";
+    button.addEventListener("click", options.onClick);
+    return button;
+  }
+
+  function renderStatusTabs(L) {
+    statusTabsEl.innerHTML = "";
+    statusTabsEl.appendChild(makeTab({
+      kind: "status",
+      tone: "all",
+      label: L.allStatuses,
+      count: statusCount("all"),
+      active: currentStatus === "all",
+      onClick: function () {
+        currentStatus = "all";
+        localStorage.setItem("statusFilter", currentStatus);
+        render();
+      }
+    }));
+
+    statusKeys.forEach(function (key) {
+      statusTabsEl.appendChild(makeTab({
+        kind: "status",
+        tone: key,
+        label: L[key] || key,
+        count: statusCount(key),
+        active: currentStatus === key,
+        onClick: function () {
+          currentStatus = key;
+          localStorage.setItem("statusFilter", currentStatus);
+          render();
+        }
+      }));
+    });
+  }
+
+  function renderCategoryTabs(L) {
     tabsEl.innerHTML = "";
-    tabsEl.appendChild(makeTab("all", L.all));
-    categories.forEach(function (c) { tabsEl.appendChild(makeTab(c, L[c] || c)); });
+    tabsEl.appendChild(makeTab({
+      kind: "category",
+      tone: "all",
+      label: L.all,
+      count: catCount("all"),
+      active: currentCat === "all",
+      onClick: function () {
+        currentCat = "all";
+        render();
+      }
+    }));
+
+    categories.forEach(function (category) {
+      tabsEl.appendChild(makeTab({
+        kind: "category",
+        tone: "category",
+        label: L[category] || category,
+        count: catCount(category),
+        active: currentCat === category,
+        onClick: function () {
+          currentCat = category;
+          render();
+        }
+      }));
+    });
   }
 
   function renderGrid(L) {
-    let list = products.slice();
-    if (currentCat !== "all") list = list.filter(function (p) { return p.category === currentCat; });
-    if (hideSold) list = list.filter(function (p) { return (p.status || "").toLowerCase() !== "sold"; });
+    const list = products.filter(function (product) {
+      return window.matchesCatalogFilters(product, {
+        category: currentCat,
+        status: currentStatus
+      });
+    });
 
-    const order = { available: 0, reserved: 1, sold: 2 };
     list.sort(function (a, b) {
-      const ra = order[(a.status || "available").toLowerCase()] || 0;
-      const rb = order[(b.status || "available").toLowerCase()] || 0;
+      const ra = statusOrder[window.getProductStatus(a)];
+      const rb = statusOrder[window.getProductStatus(b)];
       if (ra !== rb) return ra - rb;
       return (b.id || "").localeCompare(a.id || "");
     });
@@ -78,42 +148,47 @@
       return;
     }
 
-    list.forEach(function (p, i) {
-      const a = document.createElement("a");
-      const statusLower = (p.status || "").toLowerCase();
-      a.href = "product.html?id=" + encodeURIComponent(p.id);
-      a.className = "card" + (statusLower === "sold" ? " is-sold" : "");
-      a.style.animationDelay = (i * 40) + "ms";
+    list.forEach(function (product, index) {
+      const card = document.createElement("a");
+      const status = window.getProductStatus(product);
+      card.href = "product.html?id=" + encodeURIComponent(product.id);
+      card.className = "card";
+      if (status === "sold" || status === "deleted") card.className += " is-muted";
+      if (status === "sold") card.className += " is-sold";
+      if (status === "deleted") card.className += " is-deleted";
+      card.style.animationDelay = (index * 40) + "ms";
 
-      const cover = (p.images && p.images[0]) || "";
+      const cover = (product.images && product.images[0]) || "";
       const imgHtml = cover
         ? '<div class="card-img-wrap"><div class="card-img" style="background-image:url(\'' + cover + '\')"></div></div>'
         : '<div class="card-img-wrap"><div class="card-img placeholder"><span>📦</span></div></div>';
 
       let badge = "";
-      if (statusLower === "sold") {
+      if (status === "sold") {
         badge = '<span class="ribbon sold">' + window.escHtml(L.sold) + "</span>";
-      } else if (statusLower === "reserved") {
+      } else if (status === "reserved") {
         badge = '<span class="ribbon reserved">' + window.escHtml(L.reserved) + "</span>";
+      } else if (status === "deleted") {
+        badge = '<span class="ribbon deleted">' + window.escHtml(L.deleted) + "</span>";
       }
 
-      const condBadge = p.condition
-        ? '<span class="card-cond">' + window.escHtml(L.conditionValues[p.condition] || p.condition) + "</span>"
+      const condBadge = product.condition
+        ? '<span class="card-cond">' + window.escHtml(L.conditionValues[product.condition] || product.condition) + "</span>"
         : "";
 
-      const displayPrice = window.getDisplayPrice(p);
+      const displayPrice = window.getDisplayPrice(product);
       const priceHtml = displayPrice != null
         ? '<span class="card-price"><span class="currency">CAD $</span>' + displayPrice + "</span>"
         : '<span class="card-price">—</span>';
 
-      a.innerHTML =
+      card.innerHTML =
         imgHtml +
         badge +
         '<div class="card-body">' +
-          '<div class="card-title">' + window.escHtml(p.title) + "</div>" +
+          '<div class="card-title">' + window.escHtml(product.title) + "</div>" +
           '<div class="card-meta">' + priceHtml + condBadge + "</div>" +
         "</div>";
-      gridEl.appendChild(a);
+      gridEl.appendChild(card);
     });
   }
 
@@ -127,21 +202,17 @@
     if (line1El) line1El.textContent = L.heroLine1;
     if (line2El) line2El.textContent = L.heroLine2;
     if (subEl) subEl.textContent = L.heroSub;
+    if (statusLabelEl) statusLabelEl.textContent = L.filterStatus;
+    if (categoryLabelEl) categoryLabelEl.textContent = L.filterCategory;
     langBtn.textContent = L.langSwitch;
-    soldBtn.textContent = hideSold ? L.showAll : L.hideSold;
-    soldBtn.classList.toggle("active", hideSold);
-    renderTabs(L);
+    renderStatusTabs(L);
+    renderCategoryTabs(L);
     renderGrid(L);
   }
 
   langBtn.addEventListener("click", function () {
     lang = lang === "en" ? "zh" : "en";
     window.setLang(lang);
-    render();
-  });
-  soldBtn.addEventListener("click", function () {
-    hideSold = !hideSold;
-    localStorage.setItem("hideSold", hideSold ? "1" : "0");
     render();
   });
 

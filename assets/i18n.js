@@ -11,15 +11,18 @@ window.I18N = {
     heroSub: "A tiny catalog of things I'm passing on — all in Sudbury, all ready for a new home.",
     itemCount: function (n) { return n + (n === 1 ? " item" : " items"); },
     all: "All",
+    allStatuses: "All statuses",
+    filterStatus: "Status",
+    filterCategory: "Category",
     Furniture: "Furniture",
     Electronics: "Electronics",
     Kitchen: "Kitchen",
     Clothing: "Clothing",
     Other: "Other",
-    hideSold: "Hide sold",
-    showAll: "Show all",
+    available: "AVAILABLE",
     sold: "SOLD",
     reserved: "RESERVED",
+    deleted: "DELETED",
     negotiable: "Negotiable",
     firm: "Firm",
     condition: "Condition",
@@ -49,7 +52,10 @@ window.I18N = {
     email: "Email",
     phone: "Phone",
     xiaohongshu: "Xiaohongshu",
-    notFound: "Product not found."
+    notFound: "Product not found.",
+    listingPrice: "Listing price",
+    reservedPrice: "Reserved price",
+    soldPrice: "Sold price"
   },
   zh: {
     siteTitle: "冬冬二手好物",
@@ -62,15 +68,18 @@ window.I18N = {
     heroSub: "一个小小的目录，都是我想转手的好物——都在 Sudbury，等一个新主人。",
     itemCount: function (n) { return n + " 件商品"; },
     all: "全部",
+    allStatuses: "全部状态",
+    filterStatus: "状态",
+    filterCategory: "分类",
     Furniture: "家具",
     Electronics: "家电",
     Kitchen: "厨房",
     Clothing: "服装",
     Other: "其他",
-    hideSold: "隐藏已售",
-    showAll: "显示全部",
+    available: "在售",
     sold: "已售",
     reserved: "已预订",
+    deleted: "已下架",
     negotiable: "可议价",
     firm: "一口价",
     condition: "成色",
@@ -100,7 +109,10 @@ window.I18N = {
     email: "邮箱",
     phone: "电话",
     xiaohongshu: "小红书",
-    notFound: "未找到该商品。"
+    notFound: "未找到该商品。",
+    listingPrice: "标价",
+    reservedPrice: "预订价",
+    soldPrice: "成交价"
   }
 };
 
@@ -129,9 +141,35 @@ window.formatPrice = function (n) {
   return "CAD $" + n;
 };
 
+window.getProductStatus = function (product) {
+  const raw = product && product.status != null ? String(product.status) : "";
+  const normalized = raw.trim().toLowerCase();
+  if (normalized === "reserved" || normalized === "sold" || normalized === "deleted") {
+    return normalized;
+  }
+  return "available";
+};
+
+window.matchesCatalogFilters = function (product, filters) {
+  const category = filters && filters.category ? filters.category : "all";
+  const status = filters && filters.status ? filters.status : "all";
+  if (category !== "all" && product.category !== category) return false;
+  if (status !== "all" && window.getProductStatus(product) !== status) return false;
+  return true;
+};
+
+window.getStatusCount = function (products, status, category) {
+  return (products || []).filter(function (product) {
+    return window.matchesCatalogFilters(product, {
+      status: status,
+      category: category || "all"
+    });
+  }).length;
+};
+
 window.getDisplayPrice = function (product) {
   if (!product || typeof product !== "object") return null;
-  const status = String(product.status || "").trim().toLowerCase();
+  const status = window.getProductStatus(product);
   if (status === "reserved" && product.reservedPrice != null && product.reservedPrice !== "") {
     return product.reservedPrice;
   }
@@ -142,4 +180,61 @@ window.getDisplayPrice = function (product) {
     return product.askingPrice;
   }
   return null;
+};
+
+window.getPrimaryPriceLabel = function (product) {
+  const status = window.getProductStatus(product);
+  if (status === "reserved" && product && product.reservedPrice != null && product.reservedPrice !== "") {
+    return "reservedPrice";
+  }
+  if (status === "sold" && product && product.soldPrice != null && product.soldPrice !== "") {
+    return "soldPrice";
+  }
+  return "listingPrice";
+};
+
+window.getPriceFacts = function (product) {
+  if (!product || typeof product !== "object") return [];
+
+  const status = window.getProductStatus(product);
+  const askingPrice = product.askingPrice;
+  const reservedPrice = product.reservedPrice;
+  const soldPrice = product.soldPrice;
+  const facts = [];
+
+  if (status === "reserved") {
+    const effectiveReservedPrice = reservedPrice != null && reservedPrice !== "" ? reservedPrice : askingPrice;
+    if (effectiveReservedPrice != null && effectiveReservedPrice !== "") {
+      facts.push({ key: "reservedPrice", value: effectiveReservedPrice, isPrimary: true });
+    }
+    if (
+      askingPrice != null &&
+      askingPrice !== "" &&
+      reservedPrice != null &&
+      reservedPrice !== "" &&
+      reservedPrice !== askingPrice
+    ) {
+      facts.push({ key: "listingPrice", value: askingPrice, isPrimary: false });
+    }
+    return facts;
+  }
+
+  if (status === "sold") {
+    const effectiveSoldPrice = soldPrice != null && soldPrice !== "" ? soldPrice : askingPrice;
+    if (effectiveSoldPrice != null && effectiveSoldPrice !== "") {
+      facts.push({ key: "soldPrice", value: effectiveSoldPrice, isPrimary: true });
+    }
+    if (
+      askingPrice != null &&
+      askingPrice !== "" &&
+      soldPrice != null &&
+      soldPrice !== "" &&
+      soldPrice !== askingPrice
+    ) {
+      facts.push({ key: "listingPrice", value: askingPrice, isPrimary: false });
+    }
+    return facts;
+  }
+
+  return facts;
 };

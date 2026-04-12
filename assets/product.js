@@ -204,6 +204,8 @@
       badges.push('<span class="badge sold">' + window.escHtml(L.sold) + "</span>");
     } else if (statusLower === "reserved") {
       badges.push('<span class="badge reserved">' + window.escHtml(L.reserved) + "</span>");
+    } else if (statusLower === "deleted") {
+      badges.push('<span class="badge deleted">' + window.escHtml(L.deleted) + "</span>");
     }
 
     const metas = [];
@@ -217,13 +219,31 @@
       metas.push('<div class="meta-row"><span class="meta-label">' + L.posted + "</span><span>" + window.escHtml(product.postedDate) + "</span></div>");
     }
 
+    const primaryPriceLabel = L[window.getPrimaryPriceLabel(product)] || "";
+    const priceFacts = window.getPriceFacts(product);
+    const priceFactsHtml = priceFacts.length
+      ? '<div class="detail-price-meta">' + priceFacts.map(function (item) {
+          return '<div class="detail-price-meta-row' + (item.isPrimary ? ' is-primary' : '') +
+            '"><span class="detail-price-meta-label">' +
+            window.escHtml(L[item.key] || item.key) + '</span><span class="detail-price-meta-value">' +
+            window.escHtml(window.formatPrice(item.value)) + "</span></div>";
+        }).join("") + "</div>"
+      : "";
+    const primaryPriceNoteHtml = primaryPriceLabel && !priceFacts.length
+      ? '<div class="detail-price-note">' + window.escHtml(primaryPriceLabel) + "</div>"
+      : "";
+
     const infoHtml =
       '<div class="info">' +
         '<div class="badges">' + badges.join("") + "</div>" +
         '<h1 class="detail-title">' + window.escHtml(product.title) + "</h1>" +
-        (displayPrice != null
-          ? '<div class="detail-price"><span class="currency">CAD $</span>' + displayPrice + "</div>"
-          : '<div class="detail-price">—</div>') +
+        '<div class="detail-price-wrap">' +
+          (displayPrice != null
+            ? '<div class="detail-price"><span class="currency">CAD $</span>' + displayPrice + "</div>"
+            : '<div class="detail-price">—</div>') +
+          primaryPriceNoteHtml +
+        "</div>" +
+        priceFactsHtml +
         (metas.length ? '<div class="meta-list">' + metas.join("") + "</div>" : "") +
         (product.description
           ? '<section class="description"><h3>' + L.description + "</h3><p>" +
@@ -237,6 +257,7 @@
 
     detailEl.innerHTML = galleryHtml + infoHtml;
     detailEl.classList.toggle("is-sold", statusLower === "sold");
+    detailEl.classList.toggle("is-deleted", statusLower === "deleted");
     bindCopyButtons(L);
     ensureLightbox(L);
 

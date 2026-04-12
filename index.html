@@ -22,7 +22,6 @@
     </a>
     <div class="header-actions">
       <button class="btn ghost" type="button" data-lang-btn>中文</button>
-      <button class="btn ghost" type="button" data-sold-btn>Hide sold</button>
     </div>
   </div>
 </header>
@@ -44,11 +43,23 @@
   </div>
 </section>
 
-<main class="container main">
-  <div class="toolbar">
-    <nav class="category-tabs" aria-label="Categories"></nav>
+<section class="filters-band">
+  <div class="container toolbar">
+    <div class="filter-stack">
+      <div class="filter-group">
+        <div class="filter-label" data-status-label>Status</div>
+        <nav class="status-tabs" aria-label="Status filters"></nav>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label" data-category-label>Categories</div>
+        <nav class="category-tabs" aria-label="Categories"></nav>
+      </div>
+    </div>
     <div class="count" data-count></div>
   </div>
+</section>
+
+<main class="container main">
   <section class="grid" aria-live="polite"></section>
 </main>
 
