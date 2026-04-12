@@ -273,7 +273,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/013/src-01.jpg",
+        "images/013/src-02.jpg"
+      ]
     },
     {
       "id": "014",
@@ -654,7 +657,7 @@
       "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
-      "askingPrice": null,
+      "askingPrice": 8,
       "negotiable": true,
       "description": "厨房好帮手\nGood helper in the kitchen",
       "status": "Available",
@@ -688,5 +691,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-12T10:55:14+08:00"
+  "generatedAt": "2026-04-12T11:01:42+08:00"
 }
