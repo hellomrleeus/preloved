@@ -173,7 +173,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 小方桌，轻便好用。IKEA small square table, compact and practical.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -724,5 +724,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-12T22:08:33+08:00"
+  "generatedAt": "2026-04-12T23:28:09+08:00"
 }
