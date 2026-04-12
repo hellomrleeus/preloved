@@ -195,7 +195,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 摇椅，状态良好。IKEA rocking chair in good condition.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -282,7 +282,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA LENNART 抽屉柜，单买 $10；买其他物品加 $5 可带走。IKEA LENNART drawer unit for $10, or add $5 with another purchase.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -347,7 +347,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 灯，含灯泡。IKEA lamp with bulb included.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -368,7 +368,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "双头落地灯，含灯泡。Dual-head floor lamp with bulbs included.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -433,7 +433,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "吐司机，状态良好。Toaster in good condition.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -724,5 +724,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-12T11:30:12+08:00"
+  "generatedAt": "2026-04-12T11:41:20+08:00"
 }
