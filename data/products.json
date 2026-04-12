@@ -282,7 +282,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA LENNART 抽屉柜，单买 $10；买其他物品加 $5 可带走。IKEA LENNART drawer unit for $10, or add $5 with another purchase.",
-      "status": "Reserved",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -433,7 +433,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "吐司机，状态良好。Toaster in good condition.",
-      "status": "Reserved",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -724,5 +724,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-12T11:41:20+08:00"
+  "generatedAt": "2026-04-12T11:58:37+08:00"
 }
