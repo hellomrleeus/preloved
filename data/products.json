@@ -82,7 +82,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "床架，单买 $55；和床垫一起 $150 打包。Bed frame for $55, or $150 bundled with the mattress.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -411,7 +411,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "电饭锅，状态良好。Rice cooker in good condition.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -455,7 +455,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "烧水壶，状态良好。Electric kettle in good condition.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -627,7 +627,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "衣架，5个 $1。Clothes hangers, $1 for 5.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -669,7 +669,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "碗碟打包出售。Dishware sold as a bundle.",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -692,7 +692,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "厨房好帮手\nGood helper in the kitchen",
-      "status": "Available",
+      "status": "Reserved",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -724,5 +724,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-12T23:28:09+08:00"
+  "generatedAt": "2026-04-12T23:37:11+08:00"
 }
