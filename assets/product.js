@@ -221,6 +221,7 @@
 
     const primaryPriceLabel = L[window.getPrimaryPriceLabel(product)] || "";
     const priceFacts = window.getPriceFacts(product);
+    const statusNoticeKey = window.getStatusNoticeKey(product);
     const priceFactsHtml = priceFacts.length
       ? '<div class="detail-price-meta">' + priceFacts.map(function (item) {
           return '<div class="detail-price-meta-row' + (item.isPrimary ? ' is-primary' : '') +
@@ -231,6 +232,9 @@
       : "";
     const primaryPriceNoteHtml = primaryPriceLabel && !priceFacts.length
       ? '<div class="detail-price-note">' + window.escHtml(primaryPriceLabel) + "</div>"
+      : "";
+    const statusNoticeHtml = statusNoticeKey
+      ? '<div class="status-notice">' + window.escHtml(L[statusNoticeKey] || "") + "</div>"
       : "";
 
     const infoHtml =
@@ -250,6 +254,7 @@
             window.escHtml(product.description).replace(/\n/g, "<br>") + "</p></section>"
           : "") +
         '<section class="contact"><h3>' + L.contactMe + "</h3>" +
+          statusNoticeHtml +
           '<p class="contact-note">' + window.escHtml(L.contactNote) + "</p>" +
           renderContact(L) +
         "</section>" +

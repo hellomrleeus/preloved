@@ -21,7 +21,7 @@ window.I18N = {
     Other: "Other",
     available: "AVAILABLE",
     sold: "SOLD",
-    reserved: "RESERVED",
+    reserved: "OFFERED",
     deleted: "DELETED",
     negotiable: "Negotiable",
     firm: "Firm",
@@ -54,8 +54,9 @@ window.I18N = {
     xiaohongshu: "Xiaohongshu",
     notFound: "Product not found.",
     listingPrice: "Listing price",
-    reservedPrice: "Reserved price",
-    soldPrice: "Sold price"
+    reservedPrice: "Offer price",
+    soldPrice: "Sold price",
+    offeredNotice: "An offer has been made, but the item is not locked in yet. Feel free to reach out anytime — first confirmed, first served."
   },
   zh: {
     siteTitle: "冬冬二手好物",
@@ -78,7 +79,7 @@ window.I18N = {
     Other: "其他",
     available: "在售",
     sold: "已售",
-    reserved: "已预订",
+    reserved: "已出价",
     deleted: "已下架",
     negotiable: "可议价",
     firm: "一口价",
@@ -111,8 +112,9 @@ window.I18N = {
     xiaohongshu: "小红书",
     notFound: "未找到该商品。",
     listingPrice: "标价",
-    reservedPrice: "预订价",
-    soldPrice: "成交价"
+    reservedPrice: "出价",
+    soldPrice: "成交价",
+    offeredNotice: "目前已有出价，但不代表商品已经锁定。欢迎随时咨询，先确认者优先。"
   }
 };
 
@@ -237,4 +239,8 @@ window.getPriceFacts = function (product) {
   }
 
   return facts;
+};
+
+window.getStatusNoticeKey = function (product) {
+  return window.getProductStatus(product) === "reserved" ? "offeredNotice" : "";
 };

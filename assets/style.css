@@ -279,6 +279,7 @@ header.site {
   flex-wrap: wrap;
 }
 .tab {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -332,6 +333,37 @@ header.site {
 .tab:not(.active) .tab-count {
   background: var(--cream-2);
   color: var(--ink);
+}
+.tab.has-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translateX(-50%) translateY(-4px);
+  width: min(320px, 72vw);
+  padding: 10px 12px;
+  border: var(--bw) solid var(--ink);
+  border-radius: 14px;
+  background: rgba(255, 247, 232, 0.98);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.14s ease, transform 0.14s ease, visibility 0.14s ease;
+  z-index: 3;
+}
+.tab.has-tooltip:hover::after,
+.tab.has-tooltip:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 .count {
   font-size: 13px;
@@ -733,6 +765,18 @@ body.lightbox-open { overflow: hidden; }
   padding-top: 22px;
   border-top: var(--bw) dashed var(--ink);
 }
+.status-notice {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 90, 95, 0.12);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  box-shadow: var(--shadow-sm);
+}
 .contact-note {
   color: var(--ink-soft);
   font-size: 13px;
@@ -874,6 +918,16 @@ body.lightbox-open { overflow: hidden; }
   .tab {
     padding: 8px 14px;
     font-size: 13px;
+  }
+  .tab.has-tooltip::after {
+    left: 0;
+    bottom: calc(100% + 12px);
+    transform: translateX(0) translateY(-4px);
+    width: min(280px, calc(100vw - 56px));
+  }
+  .tab.has-tooltip:hover::after,
+  .tab.has-tooltip:focus-visible::after {
+    transform: translateX(0) translateY(0);
   }
   .grid {
     grid-template-columns: repeat(2, 1fr);

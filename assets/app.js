@@ -58,6 +58,12 @@
       (options.active ? " active" : "") +
       (options.kind ? " " + options.kind + "-tab" : "") +
       (options.tone ? " is-" + options.tone : "");
+    if (options.tooltip) {
+      button.className += " has-tooltip";
+      button.setAttribute("data-tooltip", options.tooltip);
+      button.setAttribute("title", options.tooltip);
+      button.setAttribute("aria-label", options.label + " - " + options.tooltip);
+    }
     button.innerHTML =
       '<span class="tab-text">' + window.escHtml(options.label) + "</span>" +
       ' <span class="tab-count">' + options.count + "</span>";
@@ -81,11 +87,13 @@
     }));
 
     statusKeys.forEach(function (key) {
+      const noticeKey = window.getStatusNoticeKey({ status: key });
       statusTabsEl.appendChild(makeTab({
         kind: "status",
         tone: key,
         label: L[key] || key,
         count: statusCount(key),
+        tooltip: noticeKey ? (L[noticeKey] || "") : "",
         active: currentStatus === key,
         onClick: function () {
           currentStatus = key;
