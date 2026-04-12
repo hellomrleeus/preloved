@@ -641,7 +641,8 @@
       "soldPrice": null,
       "images": [
         "images/031/src-01.jpg",
-        "images/031/src-02.jpg"
+        "images/031/src-02.jpg",
+        "images/031/src-03.jpg"
       ]
     },
     {
@@ -687,5 +688,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-12T10:49:40+08:00"
+  "generatedAt": "2026-04-12T10:55:14+08:00"
 }
