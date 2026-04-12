@@ -128,3 +128,18 @@ window.formatPrice = function (n) {
   if (n == null || n === "") return "—";
   return "CAD $" + n;
 };
+
+window.getDisplayPrice = function (product) {
+  if (!product || typeof product !== "object") return null;
+  const status = String(product.status || "").trim().toLowerCase();
+  if (status === "reserved" && product.reservedPrice != null && product.reservedPrice !== "") {
+    return product.reservedPrice;
+  }
+  if (status === "sold" && product.soldPrice != null && product.soldPrice !== "") {
+    return product.soldPrice;
+  }
+  if (product.askingPrice != null && product.askingPrice !== "") {
+    return product.askingPrice;
+  }
+  return null;
+};

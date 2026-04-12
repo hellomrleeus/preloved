@@ -101,8 +101,9 @@
         ? '<span class="card-cond">' + window.escHtml(L.conditionValues[p.condition] || p.condition) + "</span>"
         : "";
 
-      const priceHtml = p.askingPrice != null
-        ? '<span class="card-price"><span class="currency">CAD $</span>' + p.askingPrice + "</span>"
+      const displayPrice = window.getDisplayPrice(p);
+      const priceHtml = displayPrice != null
+        ? '<span class="card-price"><span class="currency">CAD $</span>' + displayPrice + "</span>"
         : '<span class="card-price">—</span>';
 
       a.innerHTML =

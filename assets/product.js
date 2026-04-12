@@ -169,6 +169,7 @@
     const statusLower = (product.status || "").toLowerCase();
     const images = product.images && product.images.length ? product.images : [];
     const mainSrc = images[0] || "";
+    const displayPrice = window.getDisplayPrice(product);
 
     const galleryHtml =
       '<div class="gallery">' +
@@ -220,8 +221,8 @@
       '<div class="info">' +
         '<div class="badges">' + badges.join("") + "</div>" +
         '<h1 class="detail-title">' + window.escHtml(product.title) + "</h1>" +
-        (product.askingPrice != null
-          ? '<div class="detail-price"><span class="currency">CAD $</span>' + product.askingPrice + "</div>"
+        (displayPrice != null
+          ? '<div class="detail-price"><span class="currency">CAD $</span>' + displayPrice + "</div>"
           : '<div class="detail-price">—</div>') +
         (metas.length ? '<div class="meta-list">' + metas.join("") + "</div>" : "") +
         (product.description

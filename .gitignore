@@ -1,5 +1,6 @@
 # ---- Local-only maintenance files (not part of the deployed site) ----
 scripts/
+tests/
 CLAUDE.md
 AGENTS.md
 
