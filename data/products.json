@@ -173,7 +173,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 小方桌，轻便好用。IKEA small square table, compact and practical.",
-      "status": "Reserved",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -195,7 +195,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 摇椅，状态良好。IKEA rocking chair in good condition.",
-      "status": "Reserved",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -724,5 +724,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-12T23:37:11+08:00"
+  "generatedAt": "2026-04-12T23:54:04+08:00"
 }
