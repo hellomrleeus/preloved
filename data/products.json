@@ -104,7 +104,9 @@
       "soldDate": "",
       "soldPrice": null,
       "images": [
-        "images/005/src-01.jpg"
+        "images/005/src-01.jpg",
+        "images/005/src-02.jpg",
+        "images/005/src-03.jpg"
       ]
     },
     {
@@ -134,7 +136,7 @@
       "category": "Furniture",
       "brand": "IKEA",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 80,
@@ -177,7 +179,7 @@
       "category": "Furniture",
       "brand": "IKEA",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 35,
@@ -198,7 +200,7 @@
       "category": "Furniture",
       "brand": "IKEA",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 40,
@@ -219,7 +221,7 @@
       "category": "Furniture",
       "brand": "IKEA",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 40,
@@ -229,7 +231,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/011/src-01.jpg"
+      ]
     },
     {
       "id": "012",
@@ -248,7 +252,8 @@
       "soldDate": "",
       "soldPrice": null,
       "images": [
-        "images/012/src-01.jpg"
+        "images/012/src-01.jpg",
+        "images/012/src-02.jpg"
       ]
     },
     {
@@ -257,7 +262,7 @@
       "category": "Furniture",
       "brand": "IKEA",
       "model": "LENNART",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 10,
@@ -275,7 +280,7 @@
       "category": "Furniture",
       "brand": "IKEA",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 30,
@@ -287,8 +292,7 @@
       "soldPrice": null,
       "images": [
         "images/014/src-01.jpg",
-        "images/014/src-02.jpg",
-        "images/014/src-03.jpg"
+        "images/014/src-02.jpg"
       ]
     },
     {
@@ -307,7 +311,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/015/src-01.jpg"
+      ]
     },
     {
       "id": "016",
@@ -355,7 +361,7 @@
       "category": "Kitchen",
       "brand": "Toshiba",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 70,
@@ -397,7 +403,7 @@
       "category": "Kitchen",
       "brand": "",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 5,
@@ -409,8 +415,7 @@
       "soldPrice": null,
       "images": [
         "images/020/src-01.jpg",
-        "images/020/src-02.jpg",
-        "images/020/src-03.jpg"
+        "images/020/src-02.jpg"
       ]
     },
     {
@@ -470,7 +475,9 @@
       "soldDate": "",
       "soldPrice": null,
       "images": [
-        "images/023/src-01.png"
+        "images/023/src-01.png",
+        "images/023/src-02.jpg",
+        "images/023/src-03.jpg"
       ]
     },
     {
@@ -489,7 +496,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/024/src-01.jpg"
+      ]
     },
     {
       "id": "025",
@@ -497,7 +506,7 @@
       "category": "Electronics",
       "brand": "Shark",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 50,
@@ -517,7 +526,7 @@
       "category": "Electronics",
       "brand": "Honeywell",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 30,
@@ -527,7 +536,10 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/026/src-01.jpg",
+        "images/026/src-02.jpg"
+      ]
     },
     {
       "id": "027",
@@ -573,7 +585,7 @@
       "category": "Other",
       "brand": "",
       "model": "5 pcs",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 1,
@@ -591,7 +603,7 @@
       "category": "Other",
       "brand": "",
       "model": "18-inch",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 8,
@@ -601,7 +613,9 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/030/src-01.jpg"
+      ]
     },
     {
       "id": "031",
@@ -609,7 +623,7 @@
       "category": "Kitchen",
       "brand": "",
       "model": "",
-      "condition": "Good",
+      "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
       "askingPrice": 5,
@@ -619,8 +633,47 @@
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
+      "images": [
+        "images/031/src-01.jpg",
+        "images/031/src-02.jpg"
+      ]
+    },
+    {
+      "id": "032",
+      "title": "擦丝器/ Box Grater",
+      "category": "Kitchen",
+      "brand": "",
+      "model": "",
+      "condition": "Like New",
+      "purchasePrice": null,
+      "purchaseDate": "",
+      "askingPrice": null,
+      "negotiable": true,
+      "description": "厨房好帮手\nGood helper in the kitchen",
+      "status": "Available",
+      "postedDate": "2026-04-11",
+      "soldDate": "",
+      "soldPrice": null,
+      "images": []
+    },
+    {
+      "id": "033",
+      "title": "吉他 / Guitar",
+      "category": "Other",
+      "brand": "",
+      "model": "",
+      "condition": "New",
+      "purchasePrice": null,
+      "purchaseDate": "",
+      "askingPrice": 50,
+      "negotiable": true,
+      "description": "一把几乎没用过吉他。\nA guitar that has been barely used.",
+      "status": "Available",
+      "postedDate": "2026-04-11",
+      "soldDate": "",
+      "soldPrice": null,
       "images": []
     }
   ],
-  "generatedAt": "2026-04-12T00:24:42+08:00"
+  "generatedAt": "2026-04-12T10:33:18+08:00"
 }
