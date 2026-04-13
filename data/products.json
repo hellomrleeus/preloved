@@ -586,7 +586,7 @@
       "askingPrice": null,
       "reservedPrice": null,
       "negotiable": false,
-      "description": "拼图装饰画，买其他物品可送。Puzzle wall art, free with another purchase.",
+      "description": "拼图装饰画，买其他物品超30$可送。Puzzle wall art, free with another over 30$ purchase.",
       "status": "Available",
       "postedDate": "2026-04-11",
       "soldDate": "",
@@ -768,5 +768,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-13T08:32:31+08:00"
+  "generatedAt": "2026-04-13T08:37:41+08:00"
 }
