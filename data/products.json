@@ -35,7 +35,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "17寸冬胎配轮毂，整体状况良好，可议价。17-inch winter tires with rims in good overall condition, price negotiable.",
-      "status": "Available",
+      "status": "Deleted",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -608,7 +608,7 @@
       "askingPrice": null,
       "reservedPrice": null,
       "negotiable": false,
-      "description": "Swiffer 湿拖把，买其他物品可送。Swiffer wet mop, free with another purchase.",
+      "description": "Swiffer 湿拖把，买其他物品可送。Swiffer wet mop, free with another purchase.\nFree gift with purchases over $20",
       "status": "Available",
       "postedDate": "2026-04-11",
       "soldDate": "",
@@ -758,7 +758,7 @@
       "askingPrice": 8,
       "reservedPrice": null,
       "negotiable": true,
-      "description": "小风扇/Small fan",
+      "description": "小风扇/Small fan\nSold together with other items for $5",
       "status": "Available",
       "postedDate": "46124",
       "soldDate": "",
@@ -769,5 +769,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-13T08:25:36+08:00"
+  "generatedAt": "2026-04-13T08:28:45+08:00"
 }
