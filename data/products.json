@@ -739,8 +739,10 @@
       "postedDate": "46124",
       "soldDate": "",
       "soldPrice": null,
-      "images": []
+      "images": [
+        "images/034/src-01.jpg"
+      ]
     }
   ],
-  "generatedAt": "2026-04-13T08:13:32+08:00"
+  "generatedAt": "2026-04-13T08:16:53+08:00"
 }
