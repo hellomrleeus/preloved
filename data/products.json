@@ -66,7 +66,10 @@
       "soldPrice": null,
       "images": [
         "images/003/src-01.jpg",
-        "images/003/src-02.jpg"
+        "images/003/src-02.jpg",
+        "images/003/src-03.jpg",
+        "images/003/src-04.jpg",
+        "images/003/src-05.jpg"
       ]
     },
     {
@@ -724,7 +727,7 @@
     },
     {
       "id": "034",
-      "title": "铲子一对",
+      "title": "铲子一对/A pair of kitchen spatulas",
       "category": "Kitchen",
       "brand": "",
       "model": "",
@@ -734,7 +737,7 @@
       "askingPrice": 3,
       "reservedPrice": null,
       "negotiable": true,
-      "description": "铲子一对",
+      "description": "铲子一对/A pair of kitchen spatulas",
       "status": "Available",
       "postedDate": "46124",
       "soldDate": "",
@@ -742,7 +745,29 @@
       "images": [
         "images/034/src-01.jpg"
       ]
+    },
+    {
+      "id": "035",
+      "title": "小风扇/Small fan",
+      "category": "Electronics",
+      "brand": "",
+      "model": "",
+      "condition": "Like New",
+      "purchasePrice": null,
+      "purchaseDate": "",
+      "askingPrice": 8,
+      "reservedPrice": null,
+      "negotiable": true,
+      "description": "小风扇/Small fan",
+      "status": "Available",
+      "postedDate": "46124",
+      "soldDate": "",
+      "soldPrice": null,
+      "images": [
+        "images/035/src-01.jpg",
+        "images/035/src-02.jpg"
+      ]
     }
   ],
-  "generatedAt": "2026-04-13T08:16:53+08:00"
+  "generatedAt": "2026-04-13T08:25:36+08:00"
 }
