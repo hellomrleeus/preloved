@@ -56,7 +56,7 @@
       "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
-      "askingPrice": 160,
+      "askingPrice": 150,
       "reservedPrice": null,
       "negotiable": true,
       "description": "双人 loveseat，几乎全新，平时一直带罩使用。Loveseat sofa in almost like-new condition and always kept covered.",
@@ -104,7 +104,7 @@
       "condition": "Good",
       "purchasePrice": null,
       "purchaseDate": "",
-      "askingPrice": 105,
+      "askingPrice": 90,
       "reservedPrice": null,
       "negotiable": true,
       "description": "床垫，单买 $105；和床架一起 $150 打包。Mattress for $105, or $150 bundled with the bed frame.",
@@ -149,7 +149,7 @@
       "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
-      "askingPrice": 80,
+      "askingPrice": 65,
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 双层原木茶几，状态良好。IKEA two-tier wooden coffee table in good condition.",
@@ -388,7 +388,7 @@
       "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
-      "askingPrice": 70,
+      "askingPrice": 60,
       "reservedPrice": null,
       "negotiable": true,
       "description": "Toshiba 微波炉，状态良好。Toshiba microwave in good condition.",
@@ -766,7 +766,72 @@
         "images/035/src-01.jpg",
         "images/035/src-02.jpg"
       ]
+    },
+    {
+      "id": "036",
+      "title": "壶铃/Kettlebell",
+      "category": "Other",
+      "brand": "",
+      "model": "15LB",
+      "condition": "New",
+      "purchasePrice": null,
+      "purchaseDate": "",
+      "askingPrice": 10,
+      "reservedPrice": null,
+      "negotiable": true,
+      "description": "壶铃/Kettlebell",
+      "status": "Available",
+      "postedDate": "46126",
+      "soldDate": "",
+      "soldPrice": null,
+      "images": [
+        "images/036/src-01.jpg"
+      ]
+    },
+    {
+      "id": "037",
+      "title": "悬挂式花盆/Balcony Hanging Flower Pot",
+      "category": "Other",
+      "brand": "",
+      "model": "11.8 inch",
+      "condition": "New",
+      "purchasePrice": null,
+      "purchaseDate": "",
+      "askingPrice": 1.5,
+      "reservedPrice": null,
+      "negotiable": true,
+      "description": "买4个总共5$\n5$ for 4 piece",
+      "status": "Available",
+      "postedDate": "46126",
+      "soldDate": "",
+      "soldPrice": null,
+      "images": [
+        "images/037/src-01.jpg",
+        "images/037/src-02.jpg"
+      ]
+    },
+    {
+      "id": "038",
+      "title": "滤水架/Over-the-sink Drying Rack",
+      "category": "Kitchen",
+      "brand": "",
+      "model": "52cm * 33cm",
+      "condition": "New",
+      "purchasePrice": null,
+      "purchaseDate": "",
+      "askingPrice": 5,
+      "reservedPrice": null,
+      "negotiable": true,
+      "description": "外面硅胶里面不锈钢\nStainless steel interior with silicone exterior",
+      "status": "Available",
+      "postedDate": "46126",
+      "soldDate": "",
+      "soldPrice": null,
+      "images": [
+        "images/038/src-01.jpg",
+        "images/038/src-02.jpg"
+      ]
     }
   ],
-  "generatedAt": "2026-04-14T08:06:47+08:00"
+  "generatedAt": "2026-04-14T23:08:00+08:00"
 }
