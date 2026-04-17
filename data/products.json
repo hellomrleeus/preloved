@@ -220,7 +220,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "6格收纳架，附 3 个收纳盒。6-cube storage shelf with 3 storage bins included.",
-      "status": "Available",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -242,7 +242,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 4格收纳架，附 2 个收纳盒。IKEA 4-cube storage shelf with 2 storage bins included.",
-      "status": "Available",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -833,5 +833,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-17T22:10:46+08:00"
+  "generatedAt": "2026-04-17T22:49:57+08:00"
 }
