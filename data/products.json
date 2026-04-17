@@ -108,7 +108,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "床垫，单买 $105；和床架一起 $150 打包。Mattress for $105, or $150 bundled with the bed frame.",
-      "status": "Available",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -392,7 +392,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "Toshiba 微波炉，状态良好。Toshiba microwave in good condition.",
-      "status": "Available",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -833,5 +833,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-14T23:15:04+08:00"
+  "generatedAt": "2026-04-17T22:10:46+08:00"
 }
