@@ -60,7 +60,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "双人 loveseat，几乎全新，平时一直带罩使用。Loveseat sofa in almost like-new condition and always kept covered.",
-      "status": "Available",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -544,7 +544,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "Shark 蒸汽拖把，状态良好。Shark steam mop in good condition.",
-      "status": "Available",
+      "status": "Sold",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -780,7 +780,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "壶铃/Kettlebell",
-      "status": "Available",
+      "status": "Deleted",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -831,7 +831,29 @@
         "images/038/src-01.jpg",
         "images/038/src-02.jpg"
       ]
+    },
+    {
+      "id": "039",
+      "title": "高脚杯/wine glass",
+      "category": "Kitchen",
+      "brand": "",
+      "model": "",
+      "condition": "Like New",
+      "purchasePrice": null,
+      "purchaseDate": "",
+      "askingPrice": 5,
+      "reservedPrice": null,
+      "negotiable": false,
+      "description": "5刀2个 ,8刀4个\n5$ for 2, 8$ for 4",
+      "status": "Available",
+      "postedDate": "2026-04-19",
+      "soldDate": "",
+      "soldPrice": null,
+      "images": [
+        "images/039/src-01.jpg",
+        "images/039/src-02.jpg"
+      ]
     }
   ],
-  "generatedAt": "2026-04-17T22:49:57+08:00"
+  "generatedAt": "2026-04-19T12:44:32+08:00"
 }
