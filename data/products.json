@@ -149,7 +149,7 @@
       "condition": "Like New",
       "purchasePrice": null,
       "purchaseDate": "",
-      "askingPrice": 65,
+      "askingPrice": 60,
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 双层原木茶几，状态良好。IKEA two-tier wooden coffee table in good condition.",
@@ -307,7 +307,7 @@
       "reservedPrice": null,
       "negotiable": true,
       "description": "IKEA 折叠笔记本支架，适合桌面使用。IKEA foldable laptop stand for desk use.",
-      "status": "Available",
+      "status": "Deleted",
       "postedDate": "2026-04-11",
       "soldDate": "",
       "soldPrice": null,
@@ -519,7 +519,7 @@
       "condition": "Fair",
       "purchasePrice": null,
       "purchaseDate": "",
-      "askingPrice": 35,
+      "askingPrice": 30,
       "reservedPrice": null,
       "negotiable": true,
       "description": "Bissell 吸尘器，卡扣损坏但不影响使用。Bissell vacuum cleaner with a broken latch that does not affect use.",
@@ -855,5 +855,5 @@
       ]
     }
   ],
-  "generatedAt": "2026-04-19T12:44:32+08:00"
+  "generatedAt": "2026-04-19T12:46:38+08:00"
 }
